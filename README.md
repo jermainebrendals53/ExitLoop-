@@ -1,0 +1,2 @@
+# ExitLoop-
+ ExitLoop     EndIf    Next    For $I = $ISC_Index To $aFileRead[0]     $aHolder[$I] = $aFileRead[$I]    Next   Else    Local $tmpIndex = $ISC_Index    For $I = 0 To $ISC_Index     $aHolder[$I] = $aFileRead[$I]    Next    For $I = $ISC_Index + 1 To $aFileRead[0]     If StringLeft($aFileRead[$I], 1) = ";" Then      $ISC_Index += 1     Else      ExitLoop     EndIf    Next    For $I = $ISC_Index + 1 To $aFileRead[0]     $aHolder[$I] = $aFileRead[$I]
