@@ -1,0 +1,22 @@
+; Name...........: _IniStripComments
+; Description ...: Strips comment(s) from an .ini file
+; Syntax.........: _IniStripComments($ISC_FileName[, $ISC_All = 1[, $ISC_SectionName=""[, $ISC_ForeAft = 1]]])
+; Parameters ....: $ISC_FileName        - String path of the file to work with
+;                 $ISC_All           - Strip all comments in the ini file (default is yes)
+;                 $ISC_SectionName   - The section of the ini file to strip comments from, can not be left blank.
+;                 $ISC_ForeAft       - Optional: Specifies where to strip the comments in relation to the section name
+;                                        default is before the section name.
+; Return values .: Success - Returns a 1
+;                 Failure - Returns a 0
+;                 @Error  - 0 = No error.
+;                 |1 = file not found
+;                 |2 = Could not read/split file
+;                 |3 = Not an .ini file
+;                 |4 = Section Name not found or not specified
+; Author ........: Bob Marotte (BrewManNH)
+; Modified.......:
+; Remarks .......: $ISC_ForeAft specifies whether to strip the comments before or after the section name, 1 = before/0 = after
+;                 If you use the $ISC_All = 1 option, then the other parameters after it are ignored.
+; Related .......:
+; Link ..........:
+; Example .......: $Test = _IniWriteSectionComment($IniFile, "Settings", "Now is the time for all good|men to come to the aid of their country", 1)
